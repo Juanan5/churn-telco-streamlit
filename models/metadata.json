@@ -1,0 +1,410 @@
+{
+  "model_name": "Regresión Logística (C=0,01) + SMOTE",
+  "model_family": "logistic_regression",
+  "target": "Churn (1 = abandona, 0 = permanece)",
+  "dataset": "Telco Customer Churn (blastchar)",
+  "trained_at": "2026-10-25T01:55:51+00:00",
+  "seed": 42,
+  "threshold": 0.5,
+  "risk_bands": {
+    "bajo": 0.35,
+    "alto": 0.65
+  },
+  "columns": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "tenure",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "numeric": [
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "categorical": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod"
+  ],
+  "categories": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "SeniorCitizen": [
+      0,
+      1
+    ],
+    "Partner": [
+      "No",
+      "Yes"
+    ],
+    "Dependents": [
+      "No",
+      "Yes"
+    ],
+    "PhoneService": [
+      "No",
+      "Yes"
+    ],
+    "MultipleLines": [
+      "No",
+      "No phone service",
+      "Yes"
+    ],
+    "InternetService": [
+      "DSL",
+      "Fiber optic",
+      "No"
+    ],
+    "OnlineSecurity": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "OnlineBackup": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "DeviceProtection": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "TechSupport": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "StreamingTV": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "StreamingMovies": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "Contract": [
+      "Month-to-month",
+      "One year",
+      "Two year"
+    ],
+    "PaperlessBilling": [
+      "No",
+      "Yes"
+    ],
+    "PaymentMethod": [
+      "Bank transfer (automatic)",
+      "Credit card (automatic)",
+      "Electronic check",
+      "Mailed check"
+    ]
+  },
+  "numeric_limits": {
+    "tenure": [
+      0,
+      72
+    ],
+    "MonthlyCharges": [
+      0.0,
+      200.0
+    ],
+    "TotalCharges": [
+      0.0,
+      20000.0
+    ]
+  },
+  "base_profile": {
+    "gender": "Male",
+    "SeniorCitizen": 0,
+    "Partner": "No",
+    "Dependents": "No",
+    "tenure": 29,
+    "PhoneService": "Yes",
+    "MultipleLines": "No",
+    "InternetService": "Fiber optic",
+    "OnlineSecurity": "No",
+    "OnlineBackup": "No",
+    "DeviceProtection": "No",
+    "TechSupport": "No",
+    "StreamingTV": "No",
+    "StreamingMovies": "No",
+    "Contract": "Month-to-month",
+    "PaperlessBilling": "Yes",
+    "PaymentMethod": "Electronic check",
+    "MonthlyCharges": 70.5,
+    "TotalCharges": 2044.5
+  },
+  "example": {
+    "gender": "Male",
+    "SeniorCitizen": 0,
+    "Partner": "No",
+    "Dependents": "No",
+    "tenure": 5,
+    "PhoneService": "Yes",
+    "MultipleLines": "No",
+    "InternetService": "Fiber optic",
+    "OnlineSecurity": "No",
+    "OnlineBackup": "No",
+    "DeviceProtection": "No",
+    "TechSupport": "No",
+    "StreamingTV": "No",
+    "StreamingMovies": "No",
+    "Contract": "Month-to-month",
+    "PaperlessBilling": "Yes",
+    "PaymentMethod": "Electronic check",
+    "MonthlyCharges": 95.0,
+    "TotalCharges": 475.0
+  },
+  "example_probability": 0.8768968990904534,
+  "metrics": {
+    "accuracy": 0.7409510290986515,
+    "precision": 0.5079365079365079,
+    "recall": 0.7700534759358288,
+    "f1": 0.61211477151966,
+    "roc_auc": 0.8379679144385026
+  },
+  "confusion_matrix": [
+    [
+      756,
+      279
+    ],
+    [
+      86,
+      288
+    ]
+  ],
+  "f1_cv_mean": 0.632286635387818,
+  "f1_cv_std": 0.023622780575848813,
+  "train_rows": 5634,
+  "test_rows": 1409,
+  "dataset_rows": 7043,
+  "churn_rate": 0.2653698707936959,
+  "odds_ratios": [
+    {
+      "feature": "num__tenure",
+      "label": "tenure",
+      "coef": -0.7471776655742146,
+      "odds": 0.47370161223037466
+    },
+    {
+      "feature": "cat__Contract_Two year",
+      "label": "Contract = Two year",
+      "coef": -0.6957348640692818,
+      "odds": 0.49870783082880127
+    },
+    {
+      "feature": "cat__InternetService_Fiber optic",
+      "label": "InternetService = Fiber optic",
+      "coef": 0.496118340281669,
+      "odds": 1.6423339005755788
+    },
+    {
+      "feature": "cat__Contract_One year",
+      "label": "Contract = One year",
+      "coef": -0.44517276309764764,
+      "odds": 0.6407135748081622
+    },
+    {
+      "feature": "cat__OnlineSecurity_Yes",
+      "label": "OnlineSecurity = Yes",
+      "coef": -0.4188245993219757,
+      "odds": 0.6578195671474635
+    },
+    {
+      "feature": "cat__TechSupport_Yes",
+      "label": "TechSupport = Yes",
+      "coef": -0.41314442088352776,
+      "odds": 0.6615667318763079
+    },
+    {
+      "feature": "cat__PaperlessBilling_Yes",
+      "label": "PaperlessBilling = Yes",
+      "coef": 0.3615837593948625,
+      "odds": 1.4356012620416072
+    },
+    {
+      "feature": "cat__PaymentMethod_Electronic check",
+      "label": "PaymentMethod = Electronic check",
+      "coef": 0.35256143595185957,
+      "odds": 1.4227070584261199
+    },
+    {
+      "feature": "num__MonthlyCharges",
+      "label": "MonthlyCharges",
+      "coef": 0.2982263596678329,
+      "odds": 1.3474667654903887
+    },
+    {
+      "feature": "cat__Dependents_Yes",
+      "label": "Dependents = Yes",
+      "coef": -0.25950467272208233,
+      "odds": 0.7714336032907269
+    },
+    {
+      "feature": "cat__OnlineBackup_Yes",
+      "label": "OnlineBackup = Yes",
+      "coef": -0.19101063139686014,
+      "odds": 0.8261238052544775
+    },
+    {
+      "feature": "cat__StreamingMovies_Yes",
+      "label": "StreamingMovies = Yes",
+      "coef": 0.18458708466811644,
+      "odds": 1.2027217153458583
+    },
+    {
+      "feature": "cat__MultipleLines_Yes",
+      "label": "MultipleLines = Yes",
+      "coef": 0.17736686868836948,
+      "odds": 1.1940690793374722
+    },
+    {
+      "feature": "cat__PhoneService_Yes",
+      "label": "PhoneService = Yes",
+      "coef": -0.16017286609341397,
+      "odds": 0.8519964949298249
+    },
+    {
+      "feature": "cat__MultipleLines_No phone service",
+      "label": "MultipleLines = No phone service",
+      "coef": 0.15960418068271262,
+      "odds": 1.1730464646365915
+    },
+    {
+      "feature": "cat__DeviceProtection_Yes",
+      "label": "DeviceProtection = Yes",
+      "coef": -0.13493252214218984,
+      "odds": 0.873774870155263
+    },
+    {
+      "feature": "cat__StreamingTV_Yes",
+      "label": "StreamingTV = Yes",
+      "coef": 0.11714387033314184,
+      "odds": 1.1242811687618257
+    },
+    {
+      "feature": "cat__SeniorCitizen_1",
+      "label": "SeniorCitizen = 1",
+      "coef": 0.11511444932407555,
+      "odds": 1.1220018425763596
+    },
+    {
+      "feature": "cat__InternetService_No",
+      "label": "InternetService = No",
+      "coef": -0.09965823092118892,
+      "odds": 0.9051467163380827
+    },
+    {
+      "feature": "cat__OnlineSecurity_No internet service",
+      "label": "OnlineSecurity = No internet service",
+      "coef": -0.09965823092118892,
+      "odds": 0.9051467163380827
+    },
+    {
+      "feature": "cat__OnlineBackup_No internet service",
+      "label": "OnlineBackup = No internet service",
+      "coef": -0.09965823092118892,
+      "odds": 0.9051467163380827
+    },
+    {
+      "feature": "cat__DeviceProtection_No internet service",
+      "label": "DeviceProtection = No internet service",
+      "coef": -0.09965823092118892,
+      "odds": 0.9051467163380827
+    },
+    {
+      "feature": "cat__TechSupport_No internet service",
+      "label": "TechSupport = No internet service",
+      "coef": -0.09965823092118892,
+      "odds": 0.9051467163380827
+    },
+    {
+      "feature": "cat__StreamingTV_No internet service",
+      "label": "StreamingTV = No internet service",
+      "coef": -0.09965823092118892,
+      "odds": 0.9051467163380827
+    },
+    {
+      "feature": "cat__StreamingMovies_No internet service",
+      "label": "StreamingMovies = No internet service",
+      "coef": -0.09965823092118892,
+      "odds": 0.9051467163380827
+    },
+    {
+      "feature": "cat__PaymentMethod_Credit card (automatic)",
+      "label": "PaymentMethod = Credit card (automatic)",
+      "coef": -0.09908955213200406,
+      "odds": 0.9056616004647294
+    },
+    {
+      "feature": "cat__Partner_Yes",
+      "label": "Partner = Yes",
+      "coef": -0.08332964419079782,
+      "odds": 0.9200478088105686
+    },
+    {
+      "feature": "cat__gender_Male",
+      "label": "gender = Male",
+      "coef": 0.026718060120297864,
+      "odds": 1.0270781876377137
+    },
+    {
+      "feature": "cat__PaymentMethod_Mailed check",
+      "label": "PaymentMethod = Mailed check",
+      "coef": -0.01212662461316734,
+      "odds": 0.987946606584442
+    },
+    {
+      "feature": "num__TotalCharges",
+      "label": "TotalCharges",
+      "coef": -0.001154555715413376,
+      "odds": 0.9988461105276071
+    }
+  ],
+  "versions": {
+    "python": "3.13.5",
+    "scikit_learn": "1.6.1",
+    "pandas": "2.2.3",
+    "numpy": "2.1.3",
+    "joblib": "1.4.2"
+  },
+  "notes": [
+    "Perfil base de la app: moda de las categóricas y mediana de tenure/MonthlyCharges; TotalCharges = tenure × MonthlyCharges.",
+    "El modelo se entrenó con SMOTE solo sobre el conjunto de entrenamiento.",
+    "El pipeline exportado no aplica SMOTE en predicción: produce las mismas probabilidades.",
+    "La probabilidad es una estimación, no una certeza; el modelo describe asociaciones, no causalidad.",
+    "Umbral de decisión 0,50; las bandas de riesgo son una capa de comunicación."
+  ]
+}

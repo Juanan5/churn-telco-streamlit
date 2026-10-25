@@ -1,0 +1,8 @@
+streamlit==1.45.1
+scikit-learn==1.6.1
+pandas==2.2.3
+numpy==2.1.3
+joblib==1.4.2
+altair>=5.0,<6
+# Solo se necesita para reentrenar con train_model.py; la app no importa imblearn.
+imbalanced-learn==0.13.0
