@@ -77,6 +77,9 @@ calibración formal de probabilidades; entrenado con un único conjunto de datos
 
 **Repositorio publicado:** <https://github.com/Juanan5/churn-telco-streamlit> (público).
 
+**Enlace directo al asistente de despliegue:**
+<https://share.streamlit.io/deploy?repository=Juanan5/churn-telco-streamlit&branch=main&mainModule=app.py>
+
 La publicación final de la app requiere tu inicio de sesión en Streamlit Cloud; el repositorio ya
 contiene todo lo necesario.
 
