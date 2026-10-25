@@ -73,25 +73,36 @@ individuales ni afirmar causalidad. El modelo describe asociaciones en datos his
 **Limitaciones:** sin costos ni valor de vida del cliente; partición aleatoria (no temporal); sin
 calibración formal de probabilidades; entrenado con un único conjunto de datos.
 
-## Despliegue en Streamlit Community Cloud
+## App desplegada
 
-**Repositorio publicado:** <https://github.com/Juanan5/churn-telco-streamlit> (público).
+**URL pública:** <https://churn-telco-streamli.streamlit.app/>
 
-**Enlace directo al asistente de despliegue:**
-<https://share.streamlit.io/deploy?repository=Juanan5/churn-telco-streamlit&branch=main&mainModule=app.py>
+**Repositorio:** <https://github.com/Juanan5/churn-telco-streamlit>
 
-La publicación final de la app requiere tu inicio de sesión en Streamlit Cloud; el repositorio ya
-contiene todo lo necesario.
+La aplicación está desplegada y verificada end-to-end sobre la URL pública:
 
-1. Entrar a <https://share.streamlit.io> y autorizar GitHub.
-2. **New app → Deploy a public app from GitHub**.
-3. Seleccionar el repositorio `Juanan5/churn-telco-streamlit`, rama `main` y archivo principal
-   `app.py`.
-4. En **Advanced settings**, elegir Python 3.12 (o 3.11). No se necesitan secretos ni variables de
-   entorno.
-5. **Deploy**. La primera compilación instala `requirements.txt` en 1–2 minutos.
-6. Streamlit asigna una URL del tipo `https://churn-telco-streamlit.streamlit.app`; se puede cambiar
-   el subdominio desde la configuración de la app.
+- Carga inicial con el perfil de referencia: 72,9 % de abandono.
+- Botón «Cargar ejemplo del enunciado»: **87,7 %**, clase `Yes`, banda **Alta**, `tenure=5`,
+  `MonthlyCharges=95`, `TotalCharges=475`.
+- Pestaña **Sensibilidad**: curva de riesgo por antigüedad y barras por contrato
+  (Month-to-month 87,7 %, One year 82,0 %, Two year 78,0 %).
+- Pestaña **Sobre el modelo**: Accuracy 0,741; Precision 0,5079; Recall 0,7701; F1 0,6121;
+  ROC-AUC 0,838; matriz [[756, 279], [86, 288]] y odds ratios.
+- Sin errores visibles en ninguna de las pestañas.
+
+Para actualizar la app, basta con hacer `git push` a `main`: Streamlit Community Cloud vuelve a
+desplegar automáticamente.
+
+### Cómo se desplegó
+
+1. Repositorio público `Juanan5/churn-telco-streamlit` con `app.py`, `requirements.txt` y `models/`
+   en la raíz.
+2. En <https://share.streamlit.io>, **Create app** → repositorio, rama `main`, archivo `app.py`.
+3. Python 3.12 en **Advanced settings**; sin secretos.
+4. **Deploy**. La compilación instala `requirements.txt`.
+
+El subdominio asignado es `churn-telco-streamli`; se puede cambiar desde la configuración de la app
+en Streamlit Cloud.
 
 ### Si necesitas recrear el repositorio
 
